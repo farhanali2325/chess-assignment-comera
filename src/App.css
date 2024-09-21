@@ -1,0 +1,305 @@
+/* Base styles */
+.App {
+  text-align: center;
+}
+
+.App.light {
+  background-color: white;
+  color: black;
+}
+
+.App.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Responsive button styles */
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Game page styling */
+.game-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* Move history styling */
+
+.move-history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Base dashboard styles */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: background-color 0.5s ease-in-out;
+  padding: 20px;
+}
+
+/* Light theme background */
+.dashboard.light {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Dark theme background */
+.dashboard.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* Welcome text animation */
+.animated-welcome {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: slide-in 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+/* Keyframes for text sliding in */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button container for aligning buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Animated button styles */
+.animated-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.animated-button:hover {
+  background-color: #fff;
+  color: #4CAF50;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark theme button adjustments */
+.dashboard.dark .animated-button {
+  background-color: #444;
+  color: #fff;
+}
+
+.dashboard.dark .animated-button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+  border-color: #4CAF50;
+}
+
+/* Common styles for both themes */
+.move-history {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 200px;
+  padding: 20px;
+  border-right: 2px solid #ccc;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.move-history-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Styling the move list */
+.move-history-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.move-item {
+  padding: 5px;
+  font-size: 1.1em;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Labels for each move */
+.move-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.move-detail {
+  color: #fff;
+}
+
+/* Hover effect for better interaction */
+.move-item:hover {
+  background-color: #e2e2e2;
+}
+
+/* Theme-specific styles */
+.light .move-history {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+.dark .move-history {
+  background-color: #333;
+  color: #fff;
+}
+
+/* User and computer move distinction */
+.light .user-move {
+  background-color: #d4edda;
+}
+
+.dark .user-move {
+  background-color: #4CAF50;
+}
+
+.light .computer-move {
+  background-color: #f8d7da;
+}
+
+.dark .computer-move {
+  background-color: #8b0000;
+}
+
+/* Game container for chessboard and buttons */
+.game-container {
+  display: flex;
+  align-items: flex-start; /* Align chessboard and buttons at the top */
+  flex-direction: column; /* Stack vertically on small screens */
+}
+
+/* Control buttons styling */
+.control-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  margin-left: 20px; /* Space between the chessboard and buttons */
+}
+
+.control-buttons button {
+  margin-bottom: 10px; /* Space between buttons */
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.control-buttons button:hover {
+  background-color: #45a049;
+}
+
+/* Disabled button styles */
+.control-buttons button:disabled {
+  background-color: lightgreen; /* Light green color when disabled */
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.6; /* Optional: make it slightly transparent */
+}
+
+.control-buttons button:not(:disabled) {
+  background-color: #4CAF50; /* Green color when enabled */
+  color: white; /* Text color */
+}
+
+.control-buttons button:hover:not(:disabled) {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .game-page {
+    flex-direction: column;
+    margin: 10px; /* Add margin for smaller screens */
+  }
+
+  .move-history {
+    width: 100%; /* Full width on smaller screens */
+    position: relative; /* Change position for smaller view */
+    border-right: none; /* Remove border */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .game-container {
+    flex-direction: column; /* Stack chessboard and buttons */
+    align-items: center; /* Center items */
+  }
+
+  .control-buttons {
+    margin-left: 0; /* Remove left margin on smaller screens */
+    margin-top: 20px; /* Space above buttons */
+  }
+}
+
+@media (max-width: 800px) {
+  .animated-welcome {
+    font-size: 2.5rem; /* Reduce welcome text size */
+  }
+
+  .move-item {
+    font-size: 1em; /* Reduce font size for moves */
+  }
+
+  .control-buttons button {
+    font-size: 14px; /* Smaller buttons */
+    padding: 8px 12px; /* Reduce padding */
+  }
+}
+
+
+@media (min-width: 600px) {
+  .game-container {
+    flex-direction: row; /* Align chessboard and buttons horizontally on larger screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .animated-welcome {
+    font-size: 2rem; /* Further reduce welcome text size */
+  }
+
+  .move-history-title {
+    font-size: 1.2em; /* Smaller title */
+  }
+
+  .move-detail {
+    font-size: 0.9em; /* Smaller move details */
+  }
+  .game-container {
+    flex-direction: row; /* Align chessboard and buttons horizontally on larger screens */
+  }
+}
